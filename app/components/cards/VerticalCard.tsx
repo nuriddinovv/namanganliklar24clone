@@ -2,7 +2,7 @@
 
 import { NewsProps } from "@/app/interfaces";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function VerticalCard(props: NewsProps) {
@@ -11,7 +11,7 @@ export default function VerticalCard(props: NewsProps) {
     <div
       className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
       onClick={() => {
-        router.push(`/lorem`);
+        router.push(`/news/${props.id}`);
       }}
     >
       <Image
