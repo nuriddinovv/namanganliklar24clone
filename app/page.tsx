@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import VerticalCard from "./components/cards/VerticalCard";
 import { NewsProps } from "./interfaces";
@@ -9,7 +10,6 @@ import Spinner from "./components/spinner/Spinner";
 export default function Home() {
   const [data, setData] = useState<NewsProps[]>([]);
   const [loader, setLoader] = useState(true);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -32,7 +32,7 @@ export default function Home() {
       {loader ? (
         <Spinner />
       ) : (
-        <div className="news grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+        <div className="news grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4">
           {data.map((item) => (
             <VerticalCard key={item.id} {...item} />
           ))}
@@ -42,7 +42,7 @@ export default function Home() {
         {loader ? (
           <Spinner />
         ) : (
-          <div className="horizontal-news flex flex-col gap-4 w-3/4">
+          <div className="horizontal-news flex flex-col gap-2 w-3/4">
             {data.map((item) => (
               <HorizontalCard key={item.id} {...item} />
             ))}

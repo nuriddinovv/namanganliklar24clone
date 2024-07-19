@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["dummyimage.com"], // Ma'lumotlarni olingan domenlarni ro'yxatga oling
+    domains: ["dummyimage.com"],
   },
 };
 export default nextConfig;
